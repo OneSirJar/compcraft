@@ -31,10 +31,13 @@ while true do
     local monitor = peripheral.find("monitor")
     local chest = peripheral.find("minecraft:chest")
 
-    if monitor and chest then
-        print_inventory_on_monitor(chest, monitor)
-    else
-        print("Monitor of chest niet gevonden")
+    if (not monitor) then
+        periphemu.create("right", "monitor")
+        shell.run("peripherals")
+
+        monitor = peripheral.find("monitor")
     end
+
+    print_inventory_on_monitor(chest, monitor)
     sleep(10)
 end
