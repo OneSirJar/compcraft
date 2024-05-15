@@ -31,10 +31,9 @@ while true do
     local monitor = peripheral.find("monitor")
     local chest = peripheral.find("minecraft:chest")
 
+    -- if statement die checkt of er al een monitor is. Zo niet, maak er een aan.
     if (not monitor) then
         periphemu.create("right", "monitor")
-        shell.run("peripherals")
-
         monitor = peripheral.find("monitor")
     end
 
