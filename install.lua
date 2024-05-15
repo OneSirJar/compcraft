@@ -1,14 +1,14 @@
 local request = http.get("https://raw.githubusercontent.com/OneSirJar/compcraft/main/chest_monitor.lua")
 
 if (not request) then
-    error("")
+    error("No request.")
     return
 end
 
 -- Geeft een error als de request faalt
 local statusCode = request.getResponseCode()
 if (statusCode ~= 200) then
-    error("")
+    error("Request failed.")
     return
 end
 
